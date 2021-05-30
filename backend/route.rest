@@ -1,0 +1,49 @@
+GET http://localhost:3000/appRoutes
+
+
+###
+
+POST http://localhost:3000/appRoutes
+Content-Type: application/json
+
+{
+  "username": "Sagar",
+  "password": "Password",
+  "description": "asda",
+  "vehicleInfo":{
+    "vehicleNo": "MH12KS9206",
+    "make": "1999",
+    "model": "Y2",
+    "year": "1999",
+    "ignitionStatus": true,
+    "flashlight": true,
+    "frontLeftLock": true,
+    "frontRightLock": false,
+    "backLeftLock": false,
+    "backRightLock": false
+  },
+  "healthCheck":{
+      "batteryPercentRemaining": "70%",
+      "isPluggedIn": true,
+      "status": "Charging",
+      "backLeft": 219.3,
+      "backRight": 219.3, 
+      "frontLeft": 219.3,
+      "frontRight": 219.3
+    }
+}
+
+###
+
+GET http://localhost:3000/appRoutes/60b34426c58786247baf8bc8
+
+
+###
+//Login
+POST http://localhost:3000/appRoutes/login
+Content-Type: application/json
+
+{
+  "username": "Omkar",
+  "password": "12345"
+}
