@@ -1,3 +1,4 @@
+
 GET http://localhost:3000/appRoutes
 
 
@@ -7,8 +8,8 @@ POST http://localhost:3000/appRoutes
 Content-Type: application/json
 
 {
-  "username": "Sagar",
-  "password": "Password",
+  "username": "omkar123@gmail.com",
+  "password": "Welcome@1",
   "description": "asda",
   "vehicleInfo":{
     "vehicleNo": "MH12KS9206",
@@ -35,7 +36,7 @@ Content-Type: application/json
 
 ###
 
-GET http://localhost:3000/appRoutes/60b34426c58786247baf8bc8
+GET http://localhost:3000/appRoutes/60b4c787f3ebdc17f9db34a8
 
 
 ###
@@ -44,6 +45,25 @@ POST http://localhost:3000/appRoutes/login
 Content-Type: application/json
 
 {
-  "username": "Omkar",
-  "password": "12345"
+  "username": "omkar123@gmail.com",
+  "password": "Welcome@1"
+}
+
+###
+//Register
+POST http://localhost:3000/appRoutes/register
+Content-Type: application/json
+
+{
+  "username": "omkar@gmail.com",
+  "password": "Welcome@1"
+}
+
+###
+
+PATCH http://localhost:3000/appRoutes/update/60b4c787f3ebdc17f9db34a8
+Content-Type: : application/json
+
+{
+  "username": "omkar1234@gmail.com"
 }

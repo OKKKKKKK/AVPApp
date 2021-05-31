@@ -87,7 +87,6 @@ const userSchema = new mongoose.Schema({
   },
   healthCheck: {
     type: healthSchema,
-    required: true,
   },
 });
 

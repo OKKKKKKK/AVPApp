@@ -7,7 +7,7 @@ import { AngularFireAuthModule } from "@angular/fire/auth";
 import { NgbModule } from "@ng-bootstrap/ng-bootstrap";
 import { AgmCoreModule } from "@agm/core";
 import { DeviceDetectorModule } from 'ngx-device-detector';
-import { HttpClientModule, HttpClient } from "@angular/common/http";
+import { HttpClientModule, HttpClient, HTTP_INTERCEPTORS } from "@angular/common/http";
 import { TranslateModule, TranslateLoader } from "@ngx-translate/core";
 import { TranslateHttpLoader } from "@ngx-translate/http-loader";
 import { NgxSpinnerModule } from 'ngx-spinner';
@@ -30,6 +30,8 @@ import { FullLayoutComponent } from "./layouts/full/full-layout.component";
 import { ContentLayoutComponent } from "./layouts/content/content-layout.component";
 import { PipeModule } from "./shared/pipes/pipe.module";
 import { CommonModule } from "@angular/common";
+import { ErrorInterceptor } from "./shared/auth/error.interceptor";
+import { JwtInterceptor } from "./shared/auth/jwt.interceptor";
 
 var firebaseConfig = {
   apiKey: "YOUR_API_KEY", //YOUR_API_KEY
@@ -82,7 +84,9 @@ export function createTranslateLoader(http: HttpClient) {
     AuthService,
     AuthGuard,
     { provide: PERFECT_SCROLLBAR_CONFIG, useValue: DEFAULT_PERFECT_SCROLLBAR_CONFIG },
-    WINDOW_PROVIDERS
+    WINDOW_PROVIDERS,
+    { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
+    { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true },
   ],
   bootstrap: [AppComponent]
 })
