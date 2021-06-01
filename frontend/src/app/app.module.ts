@@ -1,9 +1,5 @@
 import { NgModule } from "@angular/core";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
-
-import { AngularFireModule } from "@angular/fire";
-import { AngularFireAuthModule } from "@angular/fire/auth";
-
 import { NgbModule } from "@ng-bootstrap/ng-bootstrap";
 import { AgmCoreModule } from "@agm/core";
 import { DeviceDetectorModule } from 'ngx-device-detector';
@@ -61,8 +57,8 @@ export function createTranslateLoader(http: HttpClient) {
     AppRoutingModule,
     SharedModule,
     HttpClientModule,
-    AngularFireModule.initializeApp(firebaseConfig),
-    AngularFireAuthModule,
+    //AngularFireModule.initializeApp(firebaseConfig),
+    //AngularFireAuthModule,
     NgbModule,
     NgxSpinnerModule,
     DeviceDetectorModule.forRoot(),
