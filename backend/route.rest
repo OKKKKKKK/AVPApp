@@ -8,11 +8,11 @@ POST http://localhost:3000/appRoutes
 Content-Type: application/json
 
 {
-  "username": "omkar123@gmail.com",
+  "username": "ok@gmail.com",
   "password": "Welcome@1",
   "description": "asda",
   "vehicleInfo":{
-    "vehicleNo": "MH12KS9206",
+    "vehicleNo": "MH12gh1234",
     "make": "1999",
     "model": "Y2",
     "year": "1999",
@@ -36,7 +36,7 @@ Content-Type: application/json
 
 ###
 
-GET http://localhost:3000/appRoutes/60b4c787f3ebdc17f9db34a8
+GET http://localhost:3000/appRoutes/60b601ef68d7f32617c955e8
 
 
 ###
