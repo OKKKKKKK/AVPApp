@@ -44,6 +44,6 @@ testem.log
 # System Files
 .DS_Store
 Thumbs.db
-backend2/node-rest-api/node_modules
-backend3/User Interface AV/node_modules
 frontend/node_modules
+backend/node_modules
+frontend/node_module.zip

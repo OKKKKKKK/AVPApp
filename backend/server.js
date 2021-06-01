@@ -10,10 +10,11 @@ const express = require('express')
 const app = express()
 const mongoose = require('mongoose')
 const cors = require("cors")
-
+mongoose.set('useFindAndModify', false);
 mongoose.connect(process.env.DATABASE_URL, { 
   useNewUrlParser: true,
   useUnifiedTopology: true,
+  useCreateIndex: true
 })
 const db = mongoose.connection
 
