@@ -26,7 +26,7 @@
                       <div class="help-block mt-1 text-danger" *ngIf="invaliduserpass">{{ invalidUserOrPassworErrorMsg }}</div>
                   </div>
                   <div class="form-group">
-                    <input type="password" formControlName="password" class="form-control" placeholder="Old Password"
+                    <input type="password" formControlName="password" class="form-control" placeholder="Type your password here"
                       [ngClass]="{ 'is-invalid': loginFormSubmitted && lf.password.invalid, 'is-valid': loginFormSubmitted && !lf.password.invalid }"
                       required (keyup)="resetInvalidMsg()" (keydown)="onEnter($event)">
                       <!-- <div class="form-control-position">
