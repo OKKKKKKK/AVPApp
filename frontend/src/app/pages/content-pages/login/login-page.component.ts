@@ -17,10 +17,13 @@ export class LoginPageComponent {
   isLoginFailed = false;
 
   loginForm = new FormGroup({
-    username: new FormControl('guest@apex.com', [Validators.required]),
-    password: new FormControl('Password', [Validators.required]),
-    rememberMe: new FormControl(true)
+    username: new FormControl('', [Validators.required]),
+    password: new FormControl('', [Validators.required]),
   });
+  invaliduserpass: boolean = false;
+  showPassword: boolean = false;
+  myclass: boolean = false;
+  invalidUserOrPassworErrorMsg: any;
 
 
   constructor(private router: Router, private authService: AuthService,
@@ -48,17 +51,38 @@ export class LoginPageComponent {
         fullScreen: true
       });
 
-    this.authService.signinUser(this.loginForm.value.username, this.loginForm.value.password)
-      .then((res) => {
+      const params = {
+        username:this.loginForm.value.username, 
+        password:this.loginForm.value.password
+      }
+    this.authService.login(params)
+      .subscribe((res) => {
+        console.log(res);
+        this.invaliduserpass = false;
         this.spinner.hide();
-        this.router.navigate(['/page']);
-      })
-      .catch((err) => {
+        this.router.navigate(['/dashboard/dashboard1']);
+      },(err) => {
+        console.log(err, this.invaliduserpass);
         this.isLoginFailed = true;
+        this.invaliduserpass = true;
+        this.invalidUserOrPassworErrorMsg = err;
         this.spinner.hide();
         console.log('error: ' + err)
-      }
-      );
+      })
   }
 
+  resetInvalidMsg() {
+		this.invaliduserpass=false;
+	}
+
+	showeye(){
+		this.showPassword = !this.showPassword;
+		this.myclass = !this.myclass;
+	}
+
+	onEnter(event) {
+		if(event.keyCode == 13 ) {
+			this.onSubmit();
+		}
+	}
 }

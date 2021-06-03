@@ -74,6 +74,7 @@ const userSchema = new mongoose.Schema({
   username: {
     type: String,
     required: true,
+    unique: true
   },
   password: {
     type: String,
@@ -87,7 +88,6 @@ const userSchema = new mongoose.Schema({
   },
   healthCheck: {
     type: healthSchema,
-    required: true,
   },
 });
 
