@@ -78,12 +78,19 @@ router.post("/", async (req, res) => {
     },
     healthCheck: {
       batteryPercentRemaining: req.body.healthCheck.batteryPercentRemaining,
+      distanceCoverIconomyMode:req.body.healthCheck.distanceCoverIconomyMode,
+      distanceCoverInSpeed:req.body.healthCheck.distanceCoverInSpeed,
+      engineHealth:req.body.healthCheck.engineHealth,
       isPluggedIn: req.body.healthCheck.isPluggedIn,
       status: req.body.healthCheck.status,
       backLeft: req.body.healthCheck.backLeft,
       backRight: req.body.healthCheck.backRight,
       frontLeft:req.body.healthCheck.frontLeft,
-      frontRight: req.body.healthCheck.frontRight
+      frontRight: req.body.healthCheck.frontRight,
+      sportsMode: req.body.healthCheck.sportsMode,
+      trunk: req.body.healthCheck.trunk,
+      seatWarmer: req.body.healthCheck.seatWarmer,
+      ac: req.body.healthCheck.ac
     }
   });
   try {

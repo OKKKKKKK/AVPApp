@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { ChangeDetectorRef, Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
 import { HealthService } from 'src/app/shared/services/health.service';
 import { battery, fuelTank, tires } from '../../shared/data/data';
@@ -11,9 +11,11 @@ import { battery, fuelTank, tires } from '../../shared/data/data';
 })
 
 export class Dashboard2Component implements OnInit {
+  ecoRunning: any;
+  sportsRunning: any;
 
 
-  constructor(private healthService: HealthService, private fb: FormBuilder) { }
+  constructor(private healthService: HealthService, private fb: FormBuilder, private cdr: ChangeDetectorRef) { }
 
   battery: any = battery;
   fuelTank: any = fuelTank;
@@ -41,6 +43,9 @@ export class Dashboard2Component implements OnInit {
     }),
     healthCheck: this.fb.group({
       batteryPercentRemaining: this.user.healthCheck.batteryPercentRemaining,
+      engineHealth: this.user.healthCheck.engineHealth,
+      distanceCoverIconomyMode: this.user.healthCheck.distanceCoverIconomyMode,
+      distanceCoverInSpeed: this.user.healthCheck.distanceCoverInSpeed,
       isPluggedIn: this.user.healthCheck.isPluggedIn,
       status: this.user.healthCheck.status,
       backLeft: this.user.healthCheck.backLeft,
@@ -56,12 +61,26 @@ export class Dashboard2Component implements OnInit {
     //get latest data by id
     this.healthService.getDashboardById(this.currentUser._id).subscribe(x=>{
       console.log(x);
-      this.dashboardForm.patchValue(x)
+      this.dashboardForm.patchValue(x);
       console.log(this.dashboardForm.value);
+
+      this.ecoRunning = this.dashboardForm.get('healthCheck').get('distanceCoverIconomyMode').value * (parseFloat(this.dashboardForm.get('healthCheck').get('batteryPercentRemaining').value) / 100);
+      this.sportsRunning = this.dashboardForm.get('healthCheck').get('distanceCoverInSpeed').value * (parseFloat(this.dashboardForm.get('healthCheck').get('batteryPercentRemaining').value) / 100);
+      
+      
+      this.cdr.markForCheck();
     })
 
     this.onChanges();
   }
+
+  get f(){
+    return this.dashboardForm.controls;
+  }
+
+ /*  get health(){
+    return this.dashboardForm.value.healthCheck.controls;
+  } */
 
   onChanges() {
     this.dashboardForm.valueChanges.subscribe(res=>{

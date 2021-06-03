@@ -1,6 +1,5 @@
 import { Router } from '@angular/router';
 import { Injectable } from '@angular/core';
-import { AngularFireAuth } from "@angular/fire/auth";
 import { BehaviorSubject, Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 import { map } from 'rxjs/operators';
@@ -12,7 +11,7 @@ export class AuthService {
   public currentUser: Observable<any>;
 
 
-  constructor(public _firebaseAuth: AngularFireAuth, public router: Router, private http: HttpClient) {
+  constructor(public router: Router, private http: HttpClient) {
     this.currentUserSubject = new BehaviorSubject<any>(JSON.parse(localStorage.getItem('currentUser')));
 		this.currentUser = this.currentUserSubject.asObservable();
   }

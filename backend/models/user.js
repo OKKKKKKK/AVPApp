@@ -43,12 +43,33 @@ const vehicleSchema = new mongoose.Schema({
     type: Boolean,
     required: true,
   },
+  sportsMode: {
+    type: Boolean
+  },
+  trunk:{
+    type: Boolean
+  },
+  seatWarmer:{
+    type: Boolean
+  },
+  ac:{
+    type: Boolean
+  }
 });
 
 //Health check params
 const healthSchema = new mongoose.Schema({
   batteryPercentRemaining: {
     type: String,
+  },
+  distanceCoverIconomyMode: {
+    type: Number
+  },
+  distanceCoverInSpeed:{
+    type: Number
+  },
+  engineHealth:{
+    type: String
   },
   isPluggedIn: {
     type: Boolean,
