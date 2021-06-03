@@ -19,4 +19,13 @@ export class HealthService {
   getUserDetails(){
     return this.http.get('http://localhost:3000/appRoutes'); 
   }
+
+  updateDashboardParameters(params){
+    return this.http.put(`http://localhost:3000/appRoutes/update/${params._id}`,params)
+  }
+
+  //get by id
+  getDashboardById(_id){
+    return this.http.get(`http://localhost:3000/appRoutes/${_id}`)
+  }
 }
