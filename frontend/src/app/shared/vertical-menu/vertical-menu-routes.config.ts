@@ -6,10 +6,10 @@ export const ROUTES: RouteInfo[] = [
     path: '/page', title: 'Safety Manual', icon: 'ft-home', class: '', badge: '', badgeClass: '', isExternalLink: false, submenu: []
   },
   {
-    path: '/dashboard/dashboard2', title: 'Passenger Safety', icon: 'ft-check-circle', class: '', badge: '', badgeClass: '', isExternalLink: false, submenu: []
+    path: '/dashboard/dashboard1', title: 'Passenger Safety', icon: 'ft-check-circle', class: '', badge: '', badgeClass: '', isExternalLink: false, submenu: []
   },
   {
-    path: '/dashboard/dashboard1', title: 'Vehicle Health ', icon: 'ft-activity', class: '', badge: '', badgeClass: '', isExternalLink: false, submenu: []
+    path: '/dashboard/dashboard2', title: 'Vehicle Health ', icon: 'ft-activity', class: '', badge: '', badgeClass: '', isExternalLink: false, submenu: []
   },
   {
     path: '/dashboard/dashboard2', title: 'Passenger Comfort', icon: 'ft-sliders', class: '', badge: '', badgeClass: '', isExternalLink: false, submenu: []

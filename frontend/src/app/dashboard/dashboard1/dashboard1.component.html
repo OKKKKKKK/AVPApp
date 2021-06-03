@@ -1,73 +1,216 @@
-<!--Statistics cards Starts-->
-
-<div class="container-fluid">
-  <div class="col-12 col-sm-6 col-md-4">
-    <a [routerLink]="['/dashboard/dashboard2']" routerLinkActive="router-link-active" >
-    <div class="card gradient-purple-love">
+<div class="row match-height">
+  <div class="col-xl-4 col-lg-12">
+    <div class="card">
       <div class="card-content">
-        <div class="card-body py-0">
-          <div class="media pb-1">
-            <div class="media-body white text-left">
-              <h3 class="font-large-1 white mb-0">Vehicle Health Dashboard</h3>
-              <span></span>
-            </div>
-            <div class="media-right white text-right">
-              <i class="ft-activity font-large-1"></i>
-            </div>
-          </div>
-        </div>
-        <div id="Widget-line-chart" class="WidgetlineChart WidgetlineChartshadow mb-2">
-				</div>
-      </div>
-    </div>
-  </a>
-  </div>
-  <div class="row" (resized)="onResized($event)">
-    <div class="col-12 col-sm-6 col-md-4">
-      <a [routerLink]="['/dashboard/dashboard2']" routerLinkActive="router-link-active" >
-      <div class="card gradient-ibiza-sunset">
-        <div class="card-content">
-          <div class="card-body py-0">
-            <div class="media pb-1">
-              <div class="media-body white text-left">
-              <h3 class="font-large-1 white mb-0">Safety Dashboard</h3>
-              <span></span>
-            </div>
-            <div class="media-right white text-right">
-               <i class="ft-check-circle font-large-1"></i> 
-            </div>
-          </div>
-        </div>
-        <div id="Widget-line-chart" class="WidgetlineChart WidgetlineChartshadow mb-2">
-				</div>
-      </div>
-    </div>
-</a>
-</div>
-</div>
-<div class="row" (resized)="onResized($event)">
-  <div class="col-12 col-sm-6 col-md-4">
-    <a [routerLink]="['/dashboard/dashboard2']" routerLinkActive="router-link-active" >
-    <div class="card gradient-mint">
+        <div class="card-body">
+          <h4 class="card-title">
+            <span>Lock System</span>
+            <span class="float-right cursor-pointer">
+              <i class="ft-more-vertical-"></i>
+            </span>
+          </h4>
+          <p class="grey"></p>
+          <ul class="list-group mb-3">
+            <li class="list-group-item">
+              <span>Front Left</span>
+              <div class="custom-switch custom-switch-primary custom-control-inline float-right">
+                <input type="checkbox" class="custom-control-input" id="color-switch-1" checked>
+                <label class="custom-control-label mr-1" for="color-switch-1">
+                </label>
+              </div>
+            </li>
+            <li class="list-group-item">
+              <span>Front Right</span>
+              <div class="custom-switch custom-switch-primary custom-control-inline float-right">
+                <input type="checkbox" class="custom-control-input" id="color-switch-1" checked>
+                <label class="custom-control-label mr-1" for="color-switch-1">
+                </label>
+              </div>
+            </li>
+            <li class="list-group-item">
+              <span>Back Left</span>
+              <div class="custom-switch custom-switch-primary custom-control-inline float-right">
+                <input type="checkbox" class="custom-control-input" id="color-switch-1" checked>
+                <label class="custom-control-label mr-1" for="color-switch-1">
+                </label>
+              </div>
+            </li>
+            <li class="list-group-item">
+              <span>Back Right</span>
+              <div class="custom-switch custom-switch-primary custom-control-inline float-right">
+                <input type="checkbox" class="custom-control-input" id="color-switch-1" checked>
+                <label class="custom-control-label mr-1" for="color-switch-1">
+                </label>
+              </div>
+            </li>
+            <br>
+<div class="row match-height">
+  <div class="col-xl-4 col-lg-12">
+    <div class="card">
       <div class="card-content">
-        <div class="card-body py-0">
-          <div class="media pb-1">
-            <div class="media-body white text-left">
-              <h3 class="font-large-1 white mb-0">Comfort Dashboard</h3>
-              <span></span>
-            </div>
-            <div class="media-right white text-right">
-              <i class="ft-sliders font-large-1"></i> 
-            </div>
-          </div>
-        </div>
-        <div id="Widget-line-chart" class="WidgetlineChart WidgetlineChartshadow mb-2">
+        <div class="card-body">
+          <h4 class="card-title">
+            <span>Windows Control</span>
+            <span class="float-right cursor-pointer">
+              <i class="ft-more-vertical-"></i>
+            </span>
+          </h4>
+          <p class="grey"></p>
+          <ul class="list-group mb-3">
+            <li class="list-group-item">
+              <span>Front Left</span>
+              <div class="custom-switch custom-switch-primary custom-control-inline float-right">
+                <input type="checkbox" class="custom-control-input" id="color-switch-1" checked>
+                <label class="custom-control-label mr-1" for="color-switch-1">
+                </label>
+              </div>
+            </li>
+            <li class="list-group-item">
+              <span>Front Right</span>
+              <div class="custom-switch custom-switch-primary custom-control-inline float-right">
+                <input type="checkbox" class="custom-control-input" id="color-switch-1" checked>
+                <label class="custom-control-label mr-1" for="color-switch-1">
+                </label>
+              </div>
+            </li>
+            <li class="list-group-item">
+              <span>Back Left</span>
+              <div class="custom-switch custom-switch-primary custom-control-inline float-right">
+                <input type="checkbox" class="custom-control-input" id="color-switch-1" checked>
+                <label class="custom-control-label mr-1" for="color-switch-1">
+                </label>
+              </div>
+            </li>
+            <li class="list-group-item">
+              <span>Back Right</span>
+              <div class="custom-switch custom-switch-primary custom-control-inline float-right">
+                <input type="checkbox" class="custom-control-input" id="color-switch-1" checked>
+                <label class="custom-control-label mr-1" for="color-switch-1">
+                </label>
+              </div>
+            </li>
+<div class="row match-height">
+  <div class="col-xl-4 col-lg-12">
+    <div class="card">
+      <div class="card-content">
+        <div class="card-body">
+          <h4 class="card-title">
+            <span>SeatBelts</span>
+            <span class="float-right cursor-pointer">
+              <i class="ft-more-vertical-"></i>
+            </span>
+          </h4>
+          <p class="grey"></p>
+          <ul class="list-group mb-3">
+            <li class="list-group-item">
+              <span>Front Left</span>
+              <div class="custom-switch custom-switch-primary custom-control-inline float-right">
+                <input type="checkbox" class="custom-control-input" id="color-switch-1" checked>
+                <label class="custom-control-label mr-1" for="color-switch-1">
+                </label>
+              </div>
+            </li>
+            <li class="list-group-item">
+              <span>Front Right</span>
+              <div class="custom-switch custom-switch-primary custom-control-inline float-right">
+                <input type="checkbox" class="custom-control-input" id="color-switch-1" checked>
+                <label class="custom-control-label mr-1" for="color-switch-1">
+                </label>
+              </div>
+            </li>
+            <li class="list-group-item">
+              <span>Back Left</span>
+              <div class="custom-switch custom-switch-primary custom-control-inline float-right">
+                <input type="checkbox" class="custom-control-input" id="color-switch-1" checked>
+                <label class="custom-control-label mr-1" for="color-switch-1">
+                </label>
+              </div>
+            </li>
+            <li class="list-group-item">
+              <span>Back Right</span>
+              <div class="custom-switch custom-switch-primary custom-control-inline float-right">
+                <input type="checkbox" class="custom-control-input" id="color-switch-1" checked>
+                <label class="custom-control-label mr-1" for="color-switch-1">
+                </label>
+              </div>
+            </li>
+<div class="row match-height">
+  <div class="col-xl-4 col-lg-12">
+    <div class="card">
+      <div class="card-content">
+        <div class="card-body">
+          <h4 class="card-title">
+            <span>Windows Control</span>
+            <span class="float-right cursor-pointer">
+              <i class="ft-more-vertical-"></i>
+            </span>
+          </h4>
+          <p class="grey"></p>
+          <ul class="list-group mb-3">
+            <li class="list-group-item">
+              <span>Front Left</span>
+              <div class="custom-switch custom-switch-primary custom-control-inline float-right">
+                <input type="checkbox" class="custom-control-input" id="color-switch-1" checked>
+                <label class="custom-control-label mr-1" for="color-switch-1">
+                </label>
+              </div>
+            </li>
+            <li class="list-group-item">
+              <span>Front Right</span>
+              <div class="custom-switch custom-switch-primary custom-control-inline float-right">
+                <input type="checkbox" class="custom-control-input" id="color-switch-1" checked>
+                <label class="custom-control-label mr-1" for="color-switch-1">
+                </label>
+              </div>
+            </li>
+            <li class="list-group-item">
+              <span>Back Left</span>
+              <div class="custom-switch custom-switch-primary custom-control-inline float-right">
+                <input type="checkbox" class="custom-control-input" id="color-switch-1" checked>
+                <label class="custom-control-label mr-1" for="color-switch-1">
+                </label>
+              </div>
+            </li>
+            <li class="list-group-item">
+              <span>Back Right</span>
+              <div class="custom-switch custom-switch-primary custom-control-inline float-right">
+                <input type="checkbox" class="custom-control-input" id="color-switch-1" checked>
+                <label class="custom-control-label mr-1" for="color-switch-1">
+                </label>
+              </div>
+            </li>
 
-				</div>
-      </div>
-    </div>
-  </a>
-</div>
-</div>
-</div>  
-<!--Statistics cards Ends-->
+            <section id="colored-switch">
+              <div class="row">
+                <div class="col-12">
+                  <div class="card">
+                    <div class="card-header">
+                      <h4 class="card-title">Utility Control Board</h4><!-- need better header -->
+                    </div>
+                    <div class="card-content">
+                      <div class="card-body">
+                        <div class="custom-switch custom-switch-primary custom-control-inline mb-1 mb-xl-0">
+                          <input type="checkbox" class="custom-control-input" id="color-switch-1" checked>
+                          <label class="custom-control-label mr-1" for="color-switch-1">
+                            <span>Ignition</span>
+                          </label>
+                        </div>
+                        <div class="custom-switch custom-switch-primary custom-control-inline mb-1 mb-xl-0">
+                          <input type="checkbox" class="custom-control-input" id="color-switch-1" checked>
+                          <label class="custom-control-label mr-1" for="color-switch-1">
+                            <span>Flashlight</span>
+                          </label>
+                        </div>
+                        <div class="custom-switch custom-switch-primary custom-control-inline mb-1 mb-xl-0">
+                          <input type="checkbox" class="custom-control-input" id="color-switch-1" checked>
+                          <label class="custom-control-label mr-1" for="color-switch-1">
+                            <span>Rooftop</span>
+                          </label>
+                        </div>
+                        <div class="custom-switch custom-switch-primary custom-control-inline mb-1 mb-xl-0">
+                          <input type="checkbox" class="custom-control-input" id="color-switch-1" checked>
+                          <label class="custom-control-label mr-1" for="color-switch-1">
+                            <span>Car Trunk</span>
+                          </label>
+                        </div>
+            
