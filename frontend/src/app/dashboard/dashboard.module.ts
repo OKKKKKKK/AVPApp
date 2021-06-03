@@ -10,7 +10,7 @@ import { MatchHeightModule } from "../shared/directives/match-height.directive";
 
 import { Dashboard1Component } from "./dashboard1/dashboard1.component";
 import { Dashboard2Component } from "./dashboard2/dashboard2.component";
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgxChartsModule } from '@swimlane/ngx-charts';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
@@ -25,6 +25,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
         AngularResizedEventModule,
         FormsModule,
         NgxChartsModule,
+        ReactiveFormsModule
     ],
     exports: [],
     declarations: [

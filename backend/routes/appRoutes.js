@@ -159,18 +159,18 @@ router.route('/login').post(async (req, res) => {
 })
 
 //Patch query for ignition
-router.route('/update/:id').patch(async (req, response, next)=>{
+router.route('/update/:id').put(async (req, response, next)=>{
   console.log(req.body, req.params);
   try{
-    await User.findByIdAndUpdate(req.params.id, req.body, (error, res, data)=>{
-      console.log(res, data);
+    await User.findByIdAndUpdate(req.params.id, req.body, (error, data)=>{
+      console.log(data);
       if (error) {
         return next(error)
       } else {
-        response.json(res)
+        response.json(data)
       }
     });
-  } catch(err){
+  } catch(error){
     response.status(500).send({status:'error', error:'Something went wrong'})
   }
 
