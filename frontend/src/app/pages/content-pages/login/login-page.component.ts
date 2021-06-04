@@ -60,7 +60,7 @@ export class LoginPageComponent {
         console.log(res);
         this.invaliduserpass = false;
         this.spinner.hide();
-        this.router.navigate(['/dashboard/dashboard1']);
+        this.router.navigate(['/manual']);
       },(err) => {
         console.log(err, this.invaliduserpass);
         this.isLoginFailed = true;

@@ -62,7 +62,9 @@ export class Dashboard1Component implements OnInit {
       backLeft: this.user.healthCheck.backLeft,
       backRight: this.user.healthCheck.backRight,
       frontLeft: this.user.healthCheck.frontLeft,
-      frontRight: this.user.healthCheck.frontRight
+      frontRight: this.user.healthCheck.frontRight,
+      timeCoverInFullHealth: this.user.healthCheck.timeCoverInFullHealth,
+      distanceCoverInFullHealth: this.user.healthCheck.distanceCoverInFullHealth
     })
   })  
 

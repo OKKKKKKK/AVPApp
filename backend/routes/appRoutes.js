@@ -27,7 +27,7 @@ router.get("/", async (req, res) => {
 // get user by id
 router.route('/:id').get((req, res) => {
   User.findById(req.params.id, (error, data) => {
-    console.log(data);
+    //console.log(data);
   if (error) {
     return next(error)
   } else {
@@ -38,7 +38,7 @@ router.route('/:id').get((req, res) => {
 
 //Create
 router.post("/", async (req, res) => {
-  console.log(req);
+  console.log(req.body);
 
   const { username, password: plainTextPassword } = req.body
 
@@ -69,7 +69,7 @@ router.post("/", async (req, res) => {
       make: req.body.vehicleInfo.make,
       model: req.body.vehicleInfo.model,
       year: req.body.vehicleInfo.year,
-      ignitionStatus: req.body.vehicleInfo.flashlight,
+      ignitionStatus: req.body.vehicleInfo.ignitionStatus,
       flashlight: req.body.vehicleInfo.flashlight,
       frontLeftLock: req.body.vehicleInfo.frontLeftLock,
       frontRightLock: req.body.vehicleInfo.frontRightLock,
@@ -82,11 +82,11 @@ router.post("/", async (req, res) => {
       seatWarmerBR: req.body.vehicleInfo.seatWarmerBR,
       trunk: req.body.vehicleInfo.trunk,
       ac: req.body.vehicleInfo.ac,
-      roofTop: res.body.vehicleInfo.roofTop,
-      seatOccupiedFL: res.body.vehicleInfo.seatOccupiedFL,
-      seatOccupiedFR: res.body.vehicleInfo.seatOccupiedFR,
-      seatOccupiedBL: res.body.vehicleInfo.seatOccupiedBL,
-      seatOccupiedBR: res.body.vehicleInfo.seatOccupiedBR
+      roofTop: req.body.vehicleInfo.roofTop,
+      seatOccupiedFL: req.body.vehicleInfo.seatOccupiedFL,
+      seatOccupiedFR: req.body.vehicleInfo.seatOccupiedFR,
+      seatOccupiedBL: req.body.vehicleInfo.seatOccupiedBL,
+      seatOccupiedBR: req.body.vehicleInfo.seatOccupiedBR
     },
     healthCheck: {
       batteryPercentRemaining: req.body.healthCheck.batteryPercentRemaining,
@@ -99,10 +99,8 @@ router.post("/", async (req, res) => {
       backRight: req.body.healthCheck.backRight,
       frontLeft:req.body.healthCheck.frontLeft,
       frontRight: req.body.healthCheck.frontRight,
-      sportsMode: req.body.healthCheck.sportsMode,
-      trunk: req.body.healthCheck.trunk,
-      seatWarmer: req.body.healthCheck.seatWarmer,
-      ac: req.body.healthCheck.ac
+      distanceCoverInFullHealth: req.body.healthCheck.distanceCoverInFullHealth,
+      timeCoverInFullHealth: req.body.healthCheck.timeCoverInFullHealth
     }
   });
   try {
@@ -155,7 +153,7 @@ router.route('/register').post(async (req, res) => {
 router.route('/login').post(async (req, res) => {
 	const { username, password } = req.body
 	const user = await User.findOne({ username }).lean()
-  console.log(user);
+  //console.log(user);
 	if (!user) {
 		return res.status(401).send({ status: 'error', error: 'Invalid username/password' })
 	}
@@ -179,7 +177,7 @@ router.route('/login').post(async (req, res) => {
 
 //Patch query for ignition
 router.route('/update/:id').put(async (req, response, next)=>{
-  console.log(req.body, req.params);
+  //console.log(req.body, req.params);
   try{
     await User.findByIdAndUpdate(req.params.id, req.body, (error, data)=>{
       console.log(data);

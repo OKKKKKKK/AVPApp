@@ -113,6 +113,12 @@ const healthSchema = new mongoose.Schema({
   frontRight: {
     type: Number,
   },
+  distanceCoverInFullHealth: {
+    type: Number
+  },
+  timeCoverInFullHealth:{
+    type: Number
+  }
 });
 
 const userSchema = new mongoose.Schema({

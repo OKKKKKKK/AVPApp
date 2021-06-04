@@ -13,6 +13,8 @@ import { battery, fuelTank, tires } from '../../shared/data/data';
 export class Dashboard2Component implements OnInit {
   ecoRunning: any;
   sportsRunning: any;
+  engineHealthTime: number;
+  engineHealthDistance: number;
 
 
   constructor(private healthService: HealthService, private fb: FormBuilder, private cdr: ChangeDetectorRef) { }
@@ -48,8 +50,8 @@ export class Dashboard2Component implements OnInit {
       trunk: this.user.vehicleInfo.trunk,
       ac: this.user.vehicleInfo.ac,
       roofTop: this.user.vehicleInfo.roofTop,
-      seatOccupiedFL: this.user.vehicleInfo.seatOccupiedFL,
-      seatOccupiedFR: this.user.vehicleInfo.seatOccupiedFR,
+      seatOccupiedFL: [this.user.vehicleInfo.seatOccupiedFL, {disable: true}],
+      seatOccupiedFR: [this.user.vehicleInfo.seatOccupiedFR, {disable: true}],
       seatOccupiedBL: this.user.vehicleInfo.seatOccupiedBL,
       seatOccupiedBR: this.user.vehicleInfo.seatOccupiedBR
     }),
@@ -63,7 +65,9 @@ export class Dashboard2Component implements OnInit {
       backLeft: this.user.healthCheck.backLeft,
       backRight: this.user.healthCheck.backRight,
       frontLeft: this.user.healthCheck.frontLeft,
-      frontRight: this.user.healthCheck.frontRight
+      frontRight: this.user.healthCheck.frontRight,
+      timeCoverInFullHealth: this.user.healthCheck.timeCoverInFullHealth,
+      distanceCoverInFullHealth: this.user.healthCheck.distanceCoverInFullHealth
     })
   })
 
@@ -75,13 +79,15 @@ export class Dashboard2Component implements OnInit {
       console.log(x);
       this.dashboardForm.patchValue(x);
       console.log(this.dashboardForm.value);
-
-      this.ecoRunning = this.dashboardForm.get('healthCheck').get('distanceCoverIconomyMode').value * (parseFloat(this.dashboardForm.get('healthCheck').get('batteryPercentRemaining').value) / 100);
-      this.sportsRunning = this.dashboardForm.get('healthCheck').get('distanceCoverInSpeed').value * (parseFloat(this.dashboardForm.get('healthCheck').get('batteryPercentRemaining').value) / 100);
-      
-      
-      this.cdr.markForCheck();
     })
+
+    this.ecoRunning = this.dashboardForm.get('healthCheck').get('distanceCoverIconomyMode').value * (parseFloat(this.dashboardForm.get('healthCheck').get('batteryPercentRemaining').value) / 100);
+      this.sportsRunning = this.dashboardForm.get('healthCheck').get('distanceCoverInSpeed').value * (parseFloat(this.dashboardForm.get('healthCheck').get('batteryPercentRemaining').value) / 100);
+
+      this.engineHealthDistance = this.dashboardForm.get('healthCheck').get('distanceCoverInFullHealth').value * (parseFloat(this.dashboardForm.get('healthCheck').get('engineHealth').value) / 100);
+      this.engineHealthTime = this.dashboardForm.get('healthCheck').get('timeCoverInFullHealth').value * (parseFloat(this.dashboardForm.get('healthCheck').get('engineHealth').value) / 100);
+    this.cdr.markForCheck();
+
 
     this.onChanges();
   }
