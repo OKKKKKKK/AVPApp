@@ -44,6 +44,7 @@
     "ngx-perfect-scrollbar": "9.0.0",
     "ngx-spinner": "9.0.2",
     "ngx-take-until-destroy": "5.4.0",
+    "ngx-toastr": "^13.2.0",
     "node-sass": "4.13.1",
     "prismjs": "1.19.0",
     "pug": "2.0.4",

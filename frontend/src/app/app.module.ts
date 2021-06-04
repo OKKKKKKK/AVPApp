@@ -29,6 +29,8 @@ import { PipeModule } from "./shared/pipes/pipe.module";
 import { CommonModule } from "@angular/common";
 import { ErrorInterceptor } from "./shared/auth/error.interceptor";
 import { JwtInterceptor } from "./shared/auth/jwt.interceptor";
+import { ToastrModule } from 'ngx-toastr';
+
 
 
 const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
@@ -62,7 +64,12 @@ export function createTranslateLoader(http: HttpClient) {
     }),
     PerfectScrollbarModule,
     PipeModule,
-    CommonModule
+    CommonModule,
+    ToastrModule.forRoot({
+			timeOut: 10000,
+			positionClass: 'toast-bottom-right',
+			preventDuplicates: true,
+		  }),
   ],
   providers: [
     AuthService,

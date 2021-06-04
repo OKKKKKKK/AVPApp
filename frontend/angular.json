@@ -29,6 +29,7 @@
               "src/assets/css/animate.min.css",
               "src/assets/css/demo.css",
               "src/assets/sass/core.scss",
+              "node_modules/ngx-toastr/toastr.css",
               "src/styles.css"
             ],
             "scripts": [

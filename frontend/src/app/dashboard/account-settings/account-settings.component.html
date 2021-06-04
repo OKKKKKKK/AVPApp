@@ -41,46 +41,46 @@
                         required</div>
                     </div>
                   </div>
-                  <div class="col-12 form-group">
+                  <div class="col-12 form-group" formGroupName="vehicleInfo">
                     <label for="name">Vehicle No</label>
                     <div class="controls">
                       <input type="text" formControlName="vehicleNo" class="form-control" placeholder="Vehicle No"
-                        [ngClass]="{ 'is-invalid': generalFormSubmitted && gf.vehicleNo.invalid, 'is-valid': generalFormSubmitted && !gf.vehicleNo.invalid }"
+                        [ngClass]="{ 'is-invalid': generalFormSubmitted && gf.vehicleInfo.value.vehicleNo.invalid, 'is-valid': generalFormSubmitted && !gf.vehicleInfo.value.vehicleNo.invalid }"
                         required>
-                      <div *ngIf="generalFormSubmitted && (gf.name.invalid || gf.name.errors?.required)"
+                      <div *ngIf="generalFormSubmitted && (gf.vehicleInfo.value.vehicleNo.invalid || gf.vehicleInfo.value.vehicleNo.errors?.required)"
                         class="help-block mt-1 text-danger"> <i class="ft-alert-circle align-middle"></i> This is
                         required</div>
                     </div>
                   </div>
-                  <div class="col-12 form-group">
+                  <div class="col-12 form-group" formGroupName="vehicleInfo">
                     <label for="make">Make</label>
                     <div class="controls">
                       <input type="text" formControlName="make" class="form-control" placeholder="Make"
-                        [ngClass]="{ 'is-invalid': generalFormSubmitted && gf.make.invalid, 'is-valid': generalFormSubmitted && !gf.make.invalid }"
+                        [ngClass]="{ 'is-invalid': generalFormSubmitted && gf.vehicleInfo.value.make.invalid, 'is-valid': generalFormSubmitted && !gf.vehicleInfo.value.make.invalid }"
                         required>
-                      <div *ngIf="generalFormSubmitted && (gf.make.invalid || gf.make.errors?.required)"
+                      <div *ngIf="generalFormSubmitted && (gf.vehicleInfo.value.make.invalid || gf.vehicleInfo.value.make.errors?.required)"
                         class="help-block mt-1 text-danger"> <i class="ft-alert-circle align-middle"></i> This is
                         required</div>
                     </div>
                   </div>
-                  <div class="col-12 form-group">
+                  <div class="col-12 form-group" formGroupName="vehicleInfo">
                     <label for="model">Model</label>
                     <div class="controls">
                       <input type="text" formControlName="model" class="form-control" placeholder="Model"
-                        [ngClass]="{ 'is-invalid': generalFormSubmitted && gf.model.invalid, 'is-valid': generalFormSubmitted && !gf.model.invalid }"
+                        [ngClass]="{ 'is-invalid': generalFormSubmitted && gf.vehicleInfo.value.model.invalid, 'is-valid': generalFormSubmitted && !gf.vehicleInfo.value.model.invalid }"
                         required>
-                      <div *ngIf="generalFormSubmitted && (gf.model.invalid || gf.model.errors?.required)"
+                      <div *ngIf="generalFormSubmitted && (gf.vehicleInfo.value.model.invalid || gf.vehicleInfo.value.model.errors?.required)"
                         class="help-block mt-1 text-danger"> <i class="ft-alert-circle align-middle"></i> This is
                         required</div>
                     </div>
                   </div>
-                  <div class="col-12 form-group">
+                  <div class="col-12 form-group" formGroupName="vehicleInfo">
                     <label for="make">Year</label>
                     <div class="controls">
                       <input type="text" formControlName="year" class="form-control" placeholder="Year"
-                        [ngClass]="{ 'is-invalid': generalFormSubmitted && gf.make.invalid, 'is-valid': generalFormSubmitted && !gf.make.invalid }"
+                        [ngClass]="{ 'is-invalid': generalFormSubmitted && gf.vehicleInfo.value.year.invalid, 'is-valid': generalFormSubmitted && !gf.vehicleInfo.value.year.invalid }"
                         required>
-                      <div *ngIf="generalFormSubmitted && (gf.make.invalid || gf.make.errors?.required)"
+                      <div *ngIf="generalFormSubmitted && (gf.vehicleInfo.value.year.invalid || gf.vehicleInfo.value.year.errors?.required)"
                         class="help-block mt-1 text-danger"> <i class="ft-alert-circle align-middle"></i> This is
                         required</div>
                     </div>
@@ -99,9 +99,9 @@
                   </div>
                   <div class="col-12 d-flex flex-sm-row flex-column justify-content-end">
                     <button type="submit" class="btn btn-primary mr-sm-2 mb-1">Save Changes</button>
-                    <button type="reset" class="btn btn-secondary mb-1">Cancel</button>
+                    <button type="reset" class="btn btn-secondary mb-1" [routerLink]="['/dashboard/health']" routerLinkActive="router-link-active" >Back</button>
                   </div>
-                </div>
+                  </div>
               </form>
             </div>
           </div>

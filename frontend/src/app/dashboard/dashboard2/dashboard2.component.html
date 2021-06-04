@@ -1,7 +1,6 @@
 <form [formGroup]="dashboardForm">
-
   <div class="row match-height mb-3" formGroupName="healthCheck">
-    <div class="col-xl-4 col-lg-6 col-12">
+    <div class="col-xl-6 col-lg-6 col-12 mb-3">
       <div class="card h-100">
         <div class="card-content">
           <div class="card-body">
@@ -11,11 +10,11 @@
                 <span>Battery Percentage</span>
               </div>
               <div class="media-right align-self-center">
-                <i class="ft-book-open success font-large-2 float-right"></i>
+                <i class="ft-battery-charging success font-large-2 float-right"></i>
               </div>
             </div>
             <ngb-progressbar type="success" [value]="f.healthCheck.get('batteryPercentRemaining').value"
-              class="progress-bar-sm" height="4px"></ngb-progressbar>
+              class="progress-bar-sm" height="10px"></ngb-progressbar>
             <br>
             <div class="media-body text-left">
               <span>Can cover distance in eco mode</span>
@@ -30,7 +29,7 @@
         </div>
       </div>
     </div>
-    <div class="col-xl-4 col-lg-6 col-12">
+    <div class="col-xl-6 col-lg-6 col-12 mb-3">
       <div class="card h-100">
         <div class="card-content">
           <div class="card-body">
@@ -40,12 +39,12 @@
                 <span>Engine Health</span>
               </div>
               <div class="media-right align-self-center">
-                <i class="ft-message-square warning font-large-2 float-right"></i>
+                <i class="ft-activity warning font-large-2 float-right"></i>
               </div>
             </div>
             <ngb-progressbar type="warning" [value]="f.healthCheck.get('engineHealth').value" class="progress-bar-sm"
-              height="4px"></ngb-progressbar>
-              <br>
+              height="10px"></ngb-progressbar>
+            <br>
             <div class="media-body text-left">
               <span>Maintenance required after (kms)</span>
               <h3 class="mb-1 warning">{{engineHealthDistance}} kms</h3>
@@ -68,35 +67,7 @@
         </div>
       </div>
     </div>
-    <div class="col-xl-4 col-lg-6 col-12">
-      <div class="card h-100">
-        <div class="card-content">
-          <div class="card-body">
-            <div class="media">
-              <div class="media-body text-left">
-                <h3 class="mb-1 primary">{{f.healthCheck.get('frontLeft').value}}</h3>
-                <span>Tyre Air Pressure</span>
-              </div>
-              <div class="media-right align-self-center">
-                <i class="ft-trending-up primary font-large-2 float-right"></i>
-              </div>
-            </div>
-            <span>Front Left</span>
-            <ngb-progressbar type="primary" [value]="f.healthCheck.get('frontLeft').value" class="progress-bar-sm"
-              height="6px" [max]="46"></ngb-progressbar>
-            <span>Front Right</span>
-            <ngb-progressbar type="primary" [value]="f.healthCheck.get('frontRight').value" class="progress-bar-sm"
-              height="6px" [max]="46"></ngb-progressbar>
-            <span>Back Left</span>
-            <ngb-progressbar type="primary" [value]="f.healthCheck.get('backLeft').value" class="progress-bar-sm"
-              height="6px" [max]="46"></ngb-progressbar>
-            <span>Back Right</span>
-            <ngb-progressbar type="primary" [value]="f.healthCheck.get('backRight').value" class="progress-bar-sm"
-              height="6px" [max]="46"></ngb-progressbar>
-          </div>
-        </div>
-      </div>
-    </div>
+
     <!-- <div class="col-xl-3 col-lg-6 col-12">
       <div class="card">
         <div class="card-content">
@@ -115,6 +86,69 @@
         </div>
       </div>
     </div> -->
+  </div>
+  <div style="clear:both">
+  </div>
+  <div class="row">
+    <div class="col-xl-6 col-lg-6 col-12 mb-3">
+      <div class="card h-100">
+        <div class="card-content">
+          <div class="card-body">
+            <div class="media">
+              <div class="media-body text-left">
+                <h3 class="mb-1 warning">{{f.vehicleInfo.get('vehicleNo').value}}</h3>
+                <span>Vehicle No</span>
+              </div>
+              <div class="media-right align-self-center">
+                <i class="ft-message-square warning font-large-2 float-right"></i>
+              </div>
+            </div>
+            <div class="media-body text-left">
+              <span>Make</span>
+              <h3 class="mb-1 warning">{{f.vehicleInfo.get('make').value}}</h3>
+            </div>
+            <div class="media-body text-left">
+              <span>Model</span>
+              <h3 class="mb-1 warning">{{f.vehicleInfo.get('model').value}}</h3>
+            </div>
+            <div class="media-body text-left">
+              <span>Year</span>
+              <h3 class="mb-1 warning">{{f.vehicleInfo.get('year').value}}</h3>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-xl-6 col-lg-6 col-12 mb-3">
+      <div class="card h-100">
+        <div class="card-content">
+          <div class="card-body">
+            <div class="media">
+              <div class="media-body text-left">
+                <h3 class="mb-1 success">{{f.healthCheck.get('frontLeft').value}}</h3>
+                <span>Tyre Air Pressure</span>
+              </div>
+              <div class="media-right align-self-center">
+                <i class="ft-trending-up success font-large-2 float-right"></i>
+              </div>
+            </div>
+            <span>Front Left</span>
+            <ngb-progressbar type="success" [value]="f.healthCheck.get('frontLeft').value" class="progress-bar-sm"
+              height="10px" [max]="46"></ngb-progressbar>
+            <span>Front Right</span>
+            <ngb-progressbar type="success" [value]="f.healthCheck.get('frontRight').value" class="progress-bar-sm"
+              height="10px" [max]="46"></ngb-progressbar>
+            <span>Back Left</span>
+            <ngb-progressbar type="success" [value]="f.healthCheck.get('backLeft').value" class="progress-bar-sm"
+              height="10px" [max]="46"></ngb-progressbar>
+            <span>Back Right</span>
+            <ngb-progressbar type="success" [value]="f.healthCheck.get('backRight').value" class="progress-bar-sm"
+              height="10px" [max]="46"></ngb-progressbar>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 
   <!-- <section id="colored-switch">
@@ -198,41 +232,7 @@
       </div>
     </div>
   </div> -->
-  <div style="clear:both">
 
-  </div>
-
-  <div class="row">
-    <div class="col-xl-4 col-lg-6 col-12">
-      <div class="card h-100">
-        <div class="card-content">
-          <div class="card-body">
-            <div class="media">
-              <div class="media-body text-left">
-                <h3 class="mb-1 warning">{{f.healthCheck.get('engineHealth').value}}%</h3>
-                <span>Engine Health</span>
-              </div>
-              <div class="media-right align-self-center">
-                <i class="ft-message-square warning font-large-2 float-right"></i>
-              </div>
-            </div>
-            <ngb-progressbar type="warning" [value]="f.healthCheck.get('engineHealth').value" class="progress-bar-sm"
-              height="4px"></ngb-progressbar>
-             
-            <br>
-            <div class="media-body text-left">
-              <span>isPluggedIn</span>
-              <h3 class="mb-1 warning">{{f.healthCheck.get('isPluggedIn').value==true?"Yes":"NO"}}</h3>
-            </div>
-            <div class="media-body text-left">
-              <span>Charging Status</span>
-              <h3 class="mb-1 warning">{{f.healthCheck.get('status').value}}</h3>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
 
 
 </form>
