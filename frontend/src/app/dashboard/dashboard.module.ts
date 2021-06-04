@@ -13,6 +13,7 @@ import { Dashboard2Component } from "./dashboard2/dashboard2.component";
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgxChartsModule } from '@swimlane/ngx-charts';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { AccountSettingsComponent } from './account-settings/account-settings.component';
 
 
 
@@ -30,7 +31,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     exports: [],
     declarations: [
         Dashboard1Component,
-        Dashboard2Component
+        Dashboard2Component,
+        AccountSettingsComponent
     ],
     providers: [],
 })

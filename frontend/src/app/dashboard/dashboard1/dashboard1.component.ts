@@ -40,10 +40,17 @@ export class Dashboard1Component implements OnInit {
       backLeftLock: this.user.vehicleInfo.backLeftLock,
       backRightLock: this.user.vehicleInfo.backRightLock,
       drivingMode: this.user.vehicleInfo.drivingMode,
-      seatWarmer: this.user.vehicleInfo.seatWarmer,
+      seatWarmerFL: this.user.vehicleInfo.seatWarmerFL,
+      seatWarmerFR: this.user.vehicleInfo.seatWarmerFR,
+      seatWarmerBL: this.user.vehicleInfo.seatWarmerBL,
+      seatWarmerBR: this.user.vehicleInfo.seatWarmerBR,
       trunk: this.user.vehicleInfo.trunk,
       ac: this.user.vehicleInfo.ac,
-      roofTop: this.user.vehicleInfo.roofTop
+      roofTop: this.user.vehicleInfo.roofTop,
+      seatOccupiedFL: [this.user.vehicleInfo.seatOccupiedFL, {disabled: true}],
+      seatOccupiedFR: [this.user.vehicleInfo.seatOccupiedFR, {disabled: true}],
+      seatOccupiedBL: this.user.vehicleInfo.seatOccupiedBL,
+      seatOccupiedBR: this.user.vehicleInfo.seatOccupiedBR
     }),
     healthCheck: this.fb.group({
       batteryPercentRemaining: this.user.healthCheck.batteryPercentRemaining,
