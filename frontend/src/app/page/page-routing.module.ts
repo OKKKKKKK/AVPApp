@@ -8,7 +8,7 @@ const routes: Routes = [
     path: '',
     component: PageComponent,
     data: {
-      title: 'Page'
+      title: 'Manual'
     }
     // children: [
     //   {

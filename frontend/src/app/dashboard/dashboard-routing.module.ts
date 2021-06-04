@@ -11,26 +11,26 @@ const routes: Routes = [
     path: '',
     children: [
       {
-        path: 'dashboard1',
+        path: 'safety',
         component: Dashboard1Component,
         data: {
-          title: 'Dashboard 1'
+          title: 'Safety & Comfort'
         },
         canActivate: [AuthGuard]
       },
       {
-        path: 'dashboard2',
+        path: 'health',
         component: Dashboard2Component,
         data: {
-          title: 'Dashboard 2'
+          title: 'Vehicle Health'
         },
         canActivate: [AuthGuard]
       },
       {
-        path: 'account-setting',
+        path: 'profile',
         component: AccountSettingsComponent,
         data: {
-          title: 'Account Setting'
+          title: 'User Profile'
         },
         canActivate: [AuthGuard]
       }

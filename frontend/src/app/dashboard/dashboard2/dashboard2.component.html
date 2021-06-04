@@ -1,37 +1,37 @@
-
 <form [formGroup]="dashboardForm">
 
-  <div class="row match-height" formGroupName="healthCheck">
+  <div class="row match-height mb-3" formGroupName="healthCheck">
     <div class="col-xl-4 col-lg-6 col-12">
-      <div class="card">
+      <div class="card h-100">
         <div class="card-content">
           <div class="card-body">
             <div class="media">
               <div class="media-body text-left">
-                <h3 class="mb-1 primary">{{f.healthCheck.get('batteryPercentRemaining').value}}%</h3>
+                <h3 class="mb-1 success">{{f.healthCheck.get('batteryPercentRemaining').value}}%</h3>
                 <span>Battery Percentage</span>
               </div>
               <div class="media-right align-self-center">
-                <i class="ft-book-open primary font-large-2 float-right"></i>
+                <i class="ft-book-open success font-large-2 float-right"></i>
               </div>
             </div>
-            <ngb-progressbar type="primary" [value]="f.healthCheck.get('batteryPercentRemaining').value" class="progress-bar-sm" height="4px"></ngb-progressbar>
+            <ngb-progressbar type="success" [value]="f.healthCheck.get('batteryPercentRemaining').value"
+              class="progress-bar-sm" height="4px"></ngb-progressbar>
             <br>
             <div class="media-body text-left">
               <span>Can cover distance in eco mode</span>
-              <h3 class="mb-1 primary">{{ecoRunning}} kms</h3>
+              <h3 class="mb-1 success">{{ecoRunning}} kms</h3>
             </div>
             <br>
             <div class="media-body text-left">
               <span>Can cover distance in sports mode</span>
-              <h3 class="mb-1 primary">{{sportsRunning}} kms</h3>
+              <h3 class="mb-1 success">{{sportsRunning}} kms</h3>
             </div>
           </div>
         </div>
       </div>
     </div>
     <div class="col-xl-4 col-lg-6 col-12">
-      <div class="card">
+      <div class="card h-100">
         <div class="card-content">
           <div class="card-body">
             <div class="media">
@@ -43,41 +43,56 @@
                 <i class="ft-message-square warning font-large-2 float-right"></i>
               </div>
             </div>
-            <ngb-progressbar type="warning" [value]="f.healthCheck.get('engineHealth').value" class="progress-bar-sm" height="4px"></ngb-progressbar>
-          <br>
-          <div class="media-body text-left">
-            <span>isPluggedIn</span>
-            <h3 class="mb-1 warning">{{f.healthCheck.get('isPluggedIn').value}}</h3>
-          </div>
-          <div class="media-body text-left">
-            <span>Charging Status</span>
-            <h3 class="mb-1 warning">{{f.healthCheck.get('status').value}}</h3>
-          </div>
+            <ngb-progressbar type="warning" [value]="f.healthCheck.get('engineHealth').value" class="progress-bar-sm"
+              height="4px"></ngb-progressbar>
+              <br>
+            <div class="media-body text-left">
+              <span>Maintenance required after (kms)</span>
+              <h3 class="mb-1 warning">{{engineHealthDistance}} kms</h3>
+            </div>
+            <br>
+            <div class="media-body text-left">
+              <span>Maintenance required after (days)</span>
+              <h3 class="mb-1 warning">{{(engineHealthTime | number)}}</h3>
+            </div>
+            <!-- <br>
+            <div class="media-body text-left">
+              <span>isPluggedIn</span>
+              <h3 class="mb-1 warning">{{f.healthCheck.get('isPluggedIn').value==true?"Yes":"NO"}}</h3>
+            </div>
+            <div class="media-body text-left">
+              <span>Charging Status</span>
+              <h3 class="mb-1 warning">{{f.healthCheck.get('status').value}}</h3>
+            </div> -->
           </div>
         </div>
       </div>
     </div>
     <div class="col-xl-4 col-lg-6 col-12">
-      <div class="card">
+      <div class="card h-100">
         <div class="card-content">
           <div class="card-body">
             <div class="media">
               <div class="media-body text-left">
-                <h3 class="mb-1 success"></h3>
+                <h3 class="mb-1 primary">{{f.healthCheck.get('frontLeft').value}}</h3>
                 <span>Tyre Air Pressure</span>
               </div>
               <div class="media-right align-self-center">
-                <i class="ft-trending-up success font-large-2 float-right"></i>
+                <i class="ft-trending-up primary font-large-2 float-right"></i>
               </div>
             </div>
             <span>Front Left</span>
-            <ngb-progressbar type="success" [value]="f.healthCheck.get('frontLeft').value" class="progress-bar-sm" height="6px" [max]="46"></ngb-progressbar>
+            <ngb-progressbar type="primary" [value]="f.healthCheck.get('frontLeft').value" class="progress-bar-sm"
+              height="6px" [max]="46"></ngb-progressbar>
             <span>Front Right</span>
-            <ngb-progressbar type="success" [value]="f.healthCheck.get('frontRight').value" class="progress-bar-sm" height="6px" [max]="46"></ngb-progressbar>
+            <ngb-progressbar type="primary" [value]="f.healthCheck.get('frontRight').value" class="progress-bar-sm"
+              height="6px" [max]="46"></ngb-progressbar>
             <span>Back Left</span>
-            <ngb-progressbar type="success" [value]="f.healthCheck.get('backLeft').value" class="progress-bar-sm" height="6px" [max]="46"></ngb-progressbar>
+            <ngb-progressbar type="primary" [value]="f.healthCheck.get('backLeft').value" class="progress-bar-sm"
+              height="6px" [max]="46"></ngb-progressbar>
             <span>Back Right</span>
-            <ngb-progressbar type="success" [value]="f.healthCheck.get('backRight').value" class="progress-bar-sm" height="6px" [max]="46"></ngb-progressbar>
+            <ngb-progressbar type="primary" [value]="f.healthCheck.get('backRight').value" class="progress-bar-sm"
+              height="6px" [max]="46"></ngb-progressbar>
           </div>
         </div>
       </div>
@@ -102,12 +117,12 @@
     </div> -->
   </div>
 
-  <section id="colored-switch">
+  <!-- <section id="colored-switch">
     <div class="row" formGroupName="vehicleInfo">
       <div class="col-12">
         <div class="card">
           <div class="card-header">
-            <h4 class="card-title">Action Params</h4><!-- need better header -->
+            <h4 class="card-title">Action Params</h4>
           </div>
           <div class="card-content">
             <div class="card-body">
@@ -124,38 +139,15 @@
                   <span>Flashlight</span>
                 </label>
               </div>
-              <!-- <div class="custom-switch custom-switch-success custom-control-inline mb-1 mb-xl-0">
-              <input type="checkbox" class="custom-control-input" id="color-switch-3" checked>
-              <label class="custom-control-label mr-1" for="color-switch-3">
-                <span>Back Left</span>
-              </label>
-            </div>
-            <div class="custom-switch custom-switch-danger custom-control-inline mb-1 mb-xl-0">
-              <input type="checkbox" class="custom-control-input" id="color-switch-4" checked>
-              <label class="custom-control-label mr-1" for="color-switch-4">
-                <span>Back Right</span>
-              </label>
-            </div> -->
-              <!-- <div class="custom-switch custom-switch-warning custom-control-inline mb-1 mb-xl-0">
-              <input type="checkbox" class="custom-control-input" id="color-switch-5" checked>
-              <label class="custom-control-label mr-1" for="color-switch-5">
-                <span>Warning</span>
-              </label>
-            </div>
-            <div class="custom-switch custom-switch-info custom-control-inline mb-1 mb-xl-0">
-              <input type="checkbox" class="custom-control-input" id="color-switch-6" checked>
-              <label class="custom-control-label mr-1" for="color-switch-6">
-                <span>Info</span>
-              </label>
-            </div> -->
+
             </div>
           </div>
         </div>
       </div>
     </div>
-  </section>
+  </section> -->
 
-  <div class="row match-height">
+  <!-- <div class="row match-height">
     <div class="col-xl-4 col-lg-12" formGroupName="vehicleInfo">
       <div class="card">
         <div class="card-content">
@@ -200,73 +192,47 @@
                   </label>
                 </div>
               </li>
-              <!--  <li class="list-group-item">
-              <span>Frest Sketch</span>
-              <span class="badge bg-light-secondary float-right">2.8k</span>
-            </li>
-            <li class="list-group-item">
-              <span>Materialize HTML</span>
-              <span class="badge bg-light-danger float-right">5.6k</span>
-            </li> -->
             </ul>
-            <!-- <button type="button" class="btn btn-primary mr-2">Profile</button> -->
-          </div>
-        </div>
-      </div>
-    </div>
-    <!-- <div class="col-xl-4 col-lg-12">
-    <div class="card">
-      <div class="card-header">
-        <h4 class="card-title mb-0">Lock The Door</h4>
-      </div>
-      <div class="card-content">
-        <div class="card-body">
-          <div class="media pt-0 pb-2">
-            <div class="media-body">
-              <h4 class="font-medium-1 mb-0">Front Left</h4>
-            </div>
-            <div class="custom-switch custom-switch-primary custom-control-inline mb-1 mb-xl-0">
-              <input type="checkbox" class="custom-control-input" id="color-switch-1" checked>
-              <label class="custom-control-label mr-1" for="color-switch-1">
-              </label>
-            </div>
-          </div>
-          <div class="media pt-0 pb-2">
-            <div class="media-body">
-              <h4 class="font-medium-1 mb-0">Front Left</h4>
-            </div>
-            <div class="custom-switch custom-switch-primary custom-control-inline mb-1 mb-xl-0">
-              <input type="checkbox" class="custom-control-input" id="color-switch-1" checked>
-              <label class="custom-control-label mr-1" for="color-switch-1">
-              </label>
-            </div>
-          </div>
-          <div class="media pt-0 pb-2">
-            <div class="media-body">
-              <h4 class="font-medium-1 mb-0">Front Left</h4>
-            </div>
-            <div class="custom-switch custom-switch-primary custom-control-inline mb-1 mb-xl-0">
-              <input type="checkbox" class="custom-control-input" id="color-switch-1" checked>
-              <label class="custom-control-label mr-1" for="color-switch-1">
-              </label>
-            </div>
-          </div>
-          <div class="media pt-0 pb-2">
-            <div class="media-body">
-              <h4 class="font-medium-1 mb-0">Front Left</h4>
-            </div>
-            <div class="custom-switch custom-switch-primary custom-control-inline mb-1 mb-xl-0">
-              <input type="checkbox" class="custom-control-input" id="color-switch-1" checked>
-              <label class="custom-control-label mr-1" for="color-switch-1">
-              </label>
-            </div>
           </div>
         </div>
       </div>
     </div>
   </div> -->
+  <div style="clear:both">
 
   </div>
 
-  
+  <div class="row">
+    <div class="col-xl-4 col-lg-6 col-12">
+      <div class="card h-100">
+        <div class="card-content">
+          <div class="card-body">
+            <div class="media">
+              <div class="media-body text-left">
+                <h3 class="mb-1 warning">{{f.healthCheck.get('engineHealth').value}}%</h3>
+                <span>Engine Health</span>
+              </div>
+              <div class="media-right align-self-center">
+                <i class="ft-message-square warning font-large-2 float-right"></i>
+              </div>
+            </div>
+            <ngb-progressbar type="warning" [value]="f.healthCheck.get('engineHealth').value" class="progress-bar-sm"
+              height="4px"></ngb-progressbar>
+             
+            <br>
+            <div class="media-body text-left">
+              <span>isPluggedIn</span>
+              <h3 class="mb-1 warning">{{f.healthCheck.get('isPluggedIn').value==true?"Yes":"NO"}}</h3>
+            </div>
+            <div class="media-body text-left">
+              <span>Charging Status</span>
+              <h3 class="mb-1 warning">{{f.healthCheck.get('status').value}}</h3>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
 </form>

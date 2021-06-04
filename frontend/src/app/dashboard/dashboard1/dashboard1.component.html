@@ -153,7 +153,7 @@
                 <span>Front Left</span>
                 <div class="custom-switch custom-switch-primary custom-control-inline float-right">
                   <input type="checkbox" class="custom-control-input" id="seatOccupiedFL"
-                    formControlName="seatOccupiedFL" [disabled]=true>
+                    formControlName="seatOccupiedFL" [attr.disabled]="true">
                   <label class="custom-control-label mr-1" for="seatOccupiedFL">
                   </label>
                 </div>
@@ -162,7 +162,7 @@
                 <span>Front Right</span>
                 <div class="custom-switch custom-switch-primary custom-control-inline float-right">
                   <input type="checkbox" class="custom-control-input" id="seatOccupiedFR"
-                    formControlName="seatOccupiedFR">
+                    formControlName="seatOccupiedFR" [attr.disabled]="true">
                   <label class="custom-control-label mr-1" for="seatOccupiedFR">
                   </label>
                 </div>
@@ -170,8 +170,8 @@
               <li class="list-group-item">
                 <span>Back Left</span>
                 <div class="custom-switch custom-switch-primary custom-control-inline float-right">
-                  <input type="checkbox" class="custom-control-input" id="seatOccupiedBL" formControlName="seatOccupiedBL">
-                  <label class="custom-control-label mr-1" for="seatOccupiedBL" disabled>
+                  <input type="checkbox" class="custom-control-input" id="seatOccupiedBL" formControlName="seatOccupiedBL" [attr.disabled]="true">
+                  <label class="custom-control-label mr-1" for="seatOccupiedBL">
                   </label>
                 </div>
               </li>
@@ -179,7 +179,7 @@
                 <span>Back Right</span>
                 <div class="custom-switch custom-switch-primary custom-control-inline float-right">
                   <input type="checkbox" class="custom-control-input" id="seatOccupiedBR"
-                    formControlName="seatOccupiedBR">
+                    formControlName="seatOccupiedBR" [attr.disabled]="true">
                   <label class="custom-control-label mr-1" for="seatOccupiedBR" disabled>
                   </label>
                 </div>
