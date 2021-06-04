@@ -66,6 +66,18 @@ const vehicleSchema = new mongoose.Schema({
   },
   roofTop:{
     type: Boolean
+  },
+  seatOccupiedFL:{
+    type: Boolean
+  },
+  seatOccupiedFR:{
+    type: Boolean
+  },
+  seatOccupiedBL:{
+    type: Boolean
+  },
+  seatOccupiedBR:{
+    type: Boolean
   }
 });
 

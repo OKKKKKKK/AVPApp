@@ -76,10 +76,17 @@ router.post("/", async (req, res) => {
       backLeftLock: req.body.vehicleInfo.backLeftLock,
       backRightLock:req.body.vehicleInfo.backRightLock,
       drivingMode: req.body.vehicleInfo.drivingMode,
-      seatWarmer: req.body.vehicleInfo.seatWarmer,
+      seatWarmerFL: req.body.vehicleInfo.seatWarmerFL,
+      seatWarmerFR: req.body.vehicleInfo.seatWarmerFR,
+      seatWarmerBL: req.body.vehicleInfo.seatWarmerBL,
+      seatWarmerBR: req.body.vehicleInfo.seatWarmerBR,
       trunk: req.body.vehicleInfo.trunk,
       ac: req.body.vehicleInfo.ac,
-      roofTop: res.body.vehicleInfo.roofTop
+      roofTop: res.body.vehicleInfo.roofTop,
+      seatOccupiedFL: res.body.vehicleInfo.seatOccupiedFL,
+      seatOccupiedFR: res.body.vehicleInfo.seatOccupiedFR,
+      seatOccupiedBL: res.body.vehicleInfo.seatOccupiedBL,
+      seatOccupiedBR: res.body.vehicleInfo.seatOccupiedBR
     },
     healthCheck: {
       batteryPercentRemaining: req.body.healthCheck.batteryPercentRemaining,
