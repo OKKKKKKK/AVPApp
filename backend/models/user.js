@@ -43,16 +43,28 @@ const vehicleSchema = new mongoose.Schema({
     type: Boolean,
     required: true,
   },
-  sportsMode: {
-    type: Boolean
+  drivingMode: {
+    type: String
   },
   trunk:{
     type: Boolean
   },
-  seatWarmer:{
+  seatWarmerFL:{
+    type: Boolean
+  },
+  seatWarmerFR:{
+    type: Boolean
+  },
+  seatWarmerBL:{
+    type: Boolean
+  },
+  seatWarmerBR:{
     type: Boolean
   },
   ac:{
+    type: Boolean
+  },
+  roofTop:{
     type: Boolean
   }
 });

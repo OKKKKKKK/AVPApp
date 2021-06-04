@@ -74,7 +74,12 @@ router.post("/", async (req, res) => {
       frontLeftLock: req.body.vehicleInfo.frontLeftLock,
       frontRightLock: req.body.vehicleInfo.frontRightLock,
       backLeftLock: req.body.vehicleInfo.backLeftLock,
-      backRightLock:req.body.vehicleInfo.backRightLock
+      backRightLock:req.body.vehicleInfo.backRightLock,
+      drivingMode: req.body.vehicleInfo.drivingMode,
+      seatWarmer: req.body.vehicleInfo.seatWarmer,
+      trunk: req.body.vehicleInfo.trunk,
+      ac: req.body.vehicleInfo.ac,
+      roofTop: res.body.vehicleInfo.roofTop
     },
     healthCheck: {
       batteryPercentRemaining: req.body.healthCheck.batteryPercentRemaining,

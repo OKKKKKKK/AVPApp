@@ -39,7 +39,11 @@ export class Dashboard2Component implements OnInit {
       frontLeftLock: this.user.vehicleInfo.frontLeftLock,
       frontRightLock: this.user.vehicleInfo.frontRightLock,
       backLeftLock: this.user.vehicleInfo.backLeftLock,
-      backRightLock: this.user.vehicleInfo.backRightLock
+      backRightLock: this.user.vehicleInfo.backRightLock,
+      drivingMode: this.user.vehicleInfo.drivingMode,
+      seatWarmer: this.user.vehicleInfo.seatWarmer,
+      trunk: this.user.vehicleInfo.trunk,
+      ac: this.user.vehicleInfo.ac
     }),
     healthCheck: this.fb.group({
       batteryPercentRemaining: this.user.healthCheck.batteryPercentRemaining,
@@ -53,7 +57,7 @@ export class Dashboard2Component implements OnInit {
       frontLeft: this.user.healthCheck.frontLeft,
       frontRight: this.user.healthCheck.frontRight
     })
-  })  
+  }) 
 
   ngOnInit() {
     this.currentUser = this.currentUser.data;

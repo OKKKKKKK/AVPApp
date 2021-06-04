@@ -1,0 +1,260 @@
+
+<form [formGroup]="dashboardForm">
+
+  <section id="basic-radio">
+    <div class="row">
+      <div class="col-12">
+        <div class="card">
+          <div class="card-header">
+            <h4 class="card-title">Driving Mode</h4>
+          </div>
+          <div class="card-content" formGroupName="vehicleInfo">
+            <div class="card-body">
+              <ul class="list-unstyled mb-0">
+                <li class="d-inline-block mr-2">
+                  <div class="radio">
+                    <input type="radio" name="basic-radio-1" id="eco" formControlName="drivingMode">
+                    <label for="radio1">Eco Mode</label>
+                  </div>
+                </li>
+                <li class="d-inline-block mr-2">
+                  <div class="radio">
+                    <input type="radio" name="basic-radio-1" id="sports" formControlName="drivingMode">
+                    <label for="radio2">Sports Mode</label>
+                  </div>
+                </li>
+                <li class="d-inline-block mr-2">
+                  <div class="radio">
+                    <input type="radio" name="basic-radio-1" id="fatigue" formControlName="drivingMode">
+                    <label for="radio2">Driver Fatigue</label>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="colored-switch">
+    <div class="row" formGroupName="vehicleInfo">
+      <div class="col-12">
+        <div class="card">
+          <div class="card-header">
+            <h4 class="card-title">Action Params</h4><!-- need better header -->
+          </div>
+          <div class="card-content">
+            <div class="card-body">
+              <div class="custom-switch custom-switch-primary custom-control-inline mb-1 mb-xl-0">
+                <input type="checkbox" class="custom-control-input" id="ignitionSwitch"
+                  formControlName="ignitionStatus">
+                <label class="custom-control-label mr-1" for="ignitionSwitch">
+                  <span>Ignition</span>
+                </label>
+              </div>
+              <div class="custom-switch custom-switch-primary custom-control-inline mb-1 mb-xl-0">
+                <input type="checkbox" class="custom-control-input" id="Flashlight" formControlName="flashlight">
+                <label class="custom-control-label mr-1" for="Flashlight">
+                  <span>Flashlight</span>
+                </label>
+              </div>
+              <div class="custom-switch custom-switch-primary custom-control-inline mb-1 mb-xl-0">
+                <input type="checkbox" class="custom-control-input" id="trunk" formControlName="trunk">
+                <label class="custom-control-label mr-1" for="trunk">
+                  <span>Trunk</span>
+                </label>
+              </div>
+              <div class="custom-switch custom-switch-primary custom-control-inline mb-1 mb-xl-0">
+                <input type="checkbox" class="custom-control-input" id="ac" formControlName="ac">
+                <label class="custom-control-label mr-1" for="ac">
+                  <span>AC</span>
+                </label>
+              </div>
+              <div class="custom-switch custom-switch-primary custom-control-inline mb-1 mb-xl-0">
+                <input type="checkbox" class="custom-control-input" id="roofTop" formControlName="roofTop">
+                <label class="custom-control-label mr-1" for="roofTop">
+                  <span>Roof Top</span>
+                </label>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="row match-height">
+    <div class="col-xl-4 col-lg-12" formGroupName="vehicleInfo">
+      <div class="card">
+        <div class="card-content">
+          <div class="card-body">
+            <h4 class="card-title">
+              <span>Lock System</span>
+              <span class="float-right cursor-pointer">
+                <i class="ft-more-vertical-"></i>
+              </span>
+            </h4>
+            <p class="grey"></p>
+            <ul class="list-group mb-3">
+              <li class="list-group-item">
+                <span>Front Left</span>
+                <div class="custom-switch custom-switch-primary custom-control-inline float-right">
+                  <input type="checkbox" class="custom-control-input" id="frontLeftLock" formControlName="frontLeftLock">
+                  <label class="custom-control-label mr-1" for="frontLeftLock">
+                  </label>
+                </div>
+              </li>
+              <li class="list-group-item">
+                <span>Front Right</span>
+                <div class="custom-switch custom-switch-primary custom-control-inline float-right">
+                  <input type="checkbox" class="custom-control-input" id="frontRightLock" formControlName="frontRightLock">
+                  <label class="custom-control-label mr-1" for="frontRightLock">
+                  </label>
+                </div>
+              </li>
+              <li class="list-group-item">
+                <span>Back Left</span>
+                <div class="custom-switch custom-switch-primary custom-control-inline float-right">
+                  <input type="checkbox" class="custom-control-input" id="backLeftLock" formControlName="backLeftLock">
+                  <label class="custom-control-label mr-1" for="backLeftLock">
+                  </label>
+                </div>
+              </li>
+              <li class="list-group-item">
+                <span>Back Right</span>
+                <div class="custom-switch custom-switch-primary custom-control-inline float-right">
+                  <input type="checkbox" class="custom-control-input" id="backRightLock" formControlName="backRightLock">
+                  <label class="custom-control-label mr-1" for="backRightLock">
+                  </label>
+                </div>
+              </li>
+              <!--  <li class="list-group-item">
+              <span>Frest Sketch</span>
+              <span class="badge bg-light-secondary float-right">2.8k</span>
+            </li>
+            <li class="list-group-item">
+              <span>Materialize HTML</span>
+              <span class="badge bg-light-danger float-right">5.6k</span>
+            </li> -->
+            </ul>
+            <!-- <button type="button" class="btn btn-primary mr-2">Profile</button> -->
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-xl-4 col-lg-12" formGroupName="vehicleInfo">
+      <div class="card">
+        <div class="card-content">
+          <div class="card-body">
+            <h4 class="card-title">
+              <span>Seat occupied</span>
+              <span class="float-right cursor-pointer">
+                <i class="ft-more-vertical-"></i>
+              </span>
+            </h4>
+            <p class="grey"></p>
+            <ul class="list-group mb-3">
+              <li class="list-group-item">
+                <span>Front Left</span>
+                <div class="custom-switch custom-switch-primary custom-control-inline float-right">
+                  <input type="checkbox" class="custom-control-input" id="frontLeftLock" formControlName="frontLeftLock">
+                  <label class="custom-control-label mr-1" for="frontLeftLock" disabled>
+                  </label>
+                </div>
+              </li>
+              <li class="list-group-item">
+                <span>Front Right</span>
+                <div class="custom-switch custom-switch-primary custom-control-inline float-right">
+                  <input type="checkbox" class="custom-control-input" id="frontRightLock" formControlName="frontRightLock">
+                  <label class="custom-control-label mr-1" for="frontRightLock" disabled>
+                  </label>
+                </div>
+              </li>
+              <li class="list-group-item">
+                <span>Back Left</span>
+                <div class="custom-switch custom-switch-primary custom-control-inline float-right">
+                  <input type="checkbox" class="custom-control-input" id="backLeftLock" formControlName="backLeftLock">
+                  <label class="custom-control-label mr-1" for="backLeftLock" disabled>
+                  </label>
+                </div>
+              </li>
+              <li class="list-group-item">
+                <span>Back Right</span>
+                <div class="custom-switch custom-switch-primary custom-control-inline float-right">
+                  <input type="checkbox" class="custom-control-input" id="backRightLock" formControlName="backRightLock">
+                  <label class="custom-control-label mr-1" for="backRightLock" disabled>
+                  </label>
+                </div>
+              </li>
+              <!--  <li class="list-group-item">
+              <span>Frest Sketch</span>
+              <span class="badge bg-light-secondary float-right">2.8k</span>
+            </li>
+            <li class="list-group-item">
+              <span>Materialize HTML</span>
+              <span class="badge bg-light-danger float-right">5.6k</span>
+            </li> -->
+            </ul>
+            <!-- <button type="button" class="btn btn-primary mr-2">Profile</button> -->
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- <div class="col-xl-4 col-lg-12">
+    <div class="card">
+      <div class="card-header">
+        <h4 class="card-title mb-0">Lock The Door</h4>
+      </div>
+      <div class="card-content">
+        <div class="card-body">
+          <div class="media pt-0 pb-2">
+            <div class="media-body">
+              <h4 class="font-medium-1 mb-0">Front Left</h4>
+            </div>
+            <div class="custom-switch custom-switch-primary custom-control-inline mb-1 mb-xl-0">
+              <input type="checkbox" class="custom-control-input" id="color-switch-1" checked>
+              <label class="custom-control-label mr-1" for="color-switch-1">
+              </label>
+            </div>
+          </div>
+          <div class="media pt-0 pb-2">
+            <div class="media-body">
+              <h4 class="font-medium-1 mb-0">Front Left</h4>
+            </div>
+            <div class="custom-switch custom-switch-primary custom-control-inline mb-1 mb-xl-0">
+              <input type="checkbox" class="custom-control-input" id="color-switch-1" checked>
+              <label class="custom-control-label mr-1" for="color-switch-1">
+              </label>
+            </div>
+          </div>
+          <div class="media pt-0 pb-2">
+            <div class="media-body">
+              <h4 class="font-medium-1 mb-0">Front Left</h4>
+            </div>
+            <div class="custom-switch custom-switch-primary custom-control-inline mb-1 mb-xl-0">
+              <input type="checkbox" class="custom-control-input" id="color-switch-1" checked>
+              <label class="custom-control-label mr-1" for="color-switch-1">
+              </label>
+            </div>
+          </div>
+          <div class="media pt-0 pb-2">
+            <div class="media-body">
+              <h4 class="font-medium-1 mb-0">Front Left</h4>
+            </div>
+            <div class="custom-switch custom-switch-primary custom-control-inline mb-1 mb-xl-0">
+              <input type="checkbox" class="custom-control-input" id="color-switch-1" checked>
+              <label class="custom-control-label mr-1" for="color-switch-1">
+              </label>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div> -->
+
+  </div>
+
+  
+</form>
