@@ -17,6 +17,7 @@ import { AccountSettingsComponent } from './account-settings/account-settings.co
 
 
 
+
 @NgModule({
     imports: [
         CommonModule,
@@ -26,7 +27,7 @@ import { AccountSettingsComponent } from './account-settings/account-settings.co
         AngularResizedEventModule,
         FormsModule,
         NgxChartsModule,
-        ReactiveFormsModule
+        ReactiveFormsModule,
     ],
     exports: [],
     declarations: [

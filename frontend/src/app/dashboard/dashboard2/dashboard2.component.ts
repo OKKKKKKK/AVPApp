@@ -50,8 +50,8 @@ export class Dashboard2Component implements OnInit {
       trunk: this.user.vehicleInfo.trunk,
       ac: this.user.vehicleInfo.ac,
       roofTop: this.user.vehicleInfo.roofTop,
-      seatOccupiedFL: [this.user.vehicleInfo.seatOccupiedFL, {disable: true}],
-      seatOccupiedFR: [this.user.vehicleInfo.seatOccupiedFR, {disable: true}],
+      seatOccupiedFL: [this.user.vehicleInfo.seatOccupiedFL, {disabled: true}],
+      seatOccupiedFR: [this.user.vehicleInfo.seatOccupiedFR, {disabled: true}],
       seatOccupiedBL: this.user.vehicleInfo.seatOccupiedBL,
       seatOccupiedBR: this.user.vehicleInfo.seatOccupiedBR
     }),
@@ -69,7 +69,7 @@ export class Dashboard2Component implements OnInit {
       timeCoverInFullHealth: this.user.healthCheck.timeCoverInFullHealth,
       distanceCoverInFullHealth: this.user.healthCheck.distanceCoverInFullHealth
     })
-  })
+  })  
 
   ngOnInit() {
     this.currentUser = this.currentUser.data;
