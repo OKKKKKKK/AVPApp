@@ -8,11 +8,11 @@ POST http://localhost:3000/appRoutes
 Content-Type: application/json
 
 {
-  "username": "ok@gmail.com",
+  "username": "sagar@gmail.com",
   "password": "Welcome@1",
   "description": "asda",
   "vehicleInfo":{
-    "vehicleNo": "MH12gh1234",
+    "vehicleNo": "MH12971234",
     "make": "1999",
     "model": "Y2",
     "year": "1999",
